@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = 'force-dynamic';
+
+export const revalidate = 0; // atau dynamic = 'force-dynamic'
+
 export async function GET() {
   try {
     const links = await prisma.link.findMany({
